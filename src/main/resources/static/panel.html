@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de desarrollador - SteamLite</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">STEAM<span>LITE</span></a>
+        <nav class="nav">
+            <a href="index.html">Tienda</a>
+            <a href="panel.html" class="activo">Panel de desarrollador</a>
+        </nav>
+        <div id="sesion" class="sesion"></div>
+    </header>
+
+    <main class="contenedor">
+        <h1>Panel de desarrollador</h1>
+
+        <div class="panel-grid">
+            <div>
+                <section class="caja">
+                    <h2 id="tituloForm">Publicar juego</h2>
+                    <form id="formJuego">
+                        <label for="titulo">Título</label>
+                        <input type="text" id="titulo" maxlength="100" required>
+
+                        <label for="genero">Género</label>
+                        <select id="genero">
+                            <option>Acción</option>
+                            <option>Aventura</option>
+                            <option>RPG</option>
+                            <option>Estrategia</option>
+                            <option>Deportes</option>
+                            <option>Carreras</option>
+                            <option>Simulación</option>
+                            <option>Terror</option>
+                            <option>Puzzle</option>
+                            <option>Indie</option>
+                        </select>
+
+                        <label for="precio">Precio (0 = gratis)</label>
+                        <input type="number" id="precio" min="0" step="0.01" value="0" required>
+
+                        <label for="imagenUrl">URL de la portada (opcional)</label>
+                        <input type="url" id="imagenUrl" maxlength="500" placeholder="https://...">
+
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" maxlength="1000"></textarea>
+
+                        <div class="botones">
+                            <button type="submit" id="btnGuardar" class="verde">Publicar</button>
+                            <button type="button" id="btnCancelar" class="secundario" hidden>Cancelar</button>
+                        </div>
+                    </form>
+                    <div id="mensajeForm" class="mensaje"></div>
+                </section>
+
+                <section class="caja" style="margin-top: 24px;">
+                    <h2>Mi cuenta</h2>
+                    <form id="formCuenta">
+                        <label for="cuentaNombre">Nombre</label>
+                        <input type="text" id="cuentaNombre" required>
+                        <label for="cuentaEmail">Email</label>
+                        <input type="email" id="cuentaEmail" required>
+                        <label for="cuentaPassword">Contraseña</label>
+                        <input type="password" id="cuentaPassword" required>
+                        <div class="botones">
+                            <button type="submit">Guardar cambios</button>
+                            <button type="button" id="btnEliminarCuenta" class="peligro">Eliminar cuenta</button>
+                        </div>
+                    </form>
+                    <div id="mensajeCuenta" class="mensaje"></div>
+                </section>
+            </div>
+
+            <section>
+                <h2>Mis juegos publicados</h2>
+                <form id="formBuscar" class="barra">
+                    <input type="search" id="textoBuscar" placeholder="Buscar entre mis juegos...">
+                    <button type="button" class="secundario" id="btnLimpiar">Ver todos</button>
+                </form>
+                <div id="mensajeLista" class="mensaje"></div>
+                <div id="lista"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="comun.js"></script>
+    <script src="panel.js"></script>
+</body>
+</html>

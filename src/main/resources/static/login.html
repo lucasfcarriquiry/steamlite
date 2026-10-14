@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión - SteamLite</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">STEAM<span>LITE</span></a>
+        <nav class="nav">
+            <a href="index.html">Tienda</a>
+        </nav>
+    </header>
+
+    <main class="login-centro">
+        <section class="caja">
+            <h2>Iniciar sesión</h2>
+            <form id="formLogin">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" required>
+                <label for="loginPassword">Contraseña</label>
+                <input type="password" id="loginPassword" required>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+            <div id="mensajeLogin" class="mensaje"></div>
+        </section>
+
+        <section class="caja">
+            <h2>Crear cuenta</h2>
+            <form id="formRegistro">
+                <label for="regNombre">Nombre de usuario</label>
+                <input type="text" id="regNombre" required>
+                <label for="regEmail">Email</label>
+                <input type="email" id="regEmail" required>
+                <label for="regPassword">Contraseña</label>
+                <input type="password" id="regPassword" required>
+                <button type="submit" class="verde">Registrarme</button>
+            </form>
+            <div id="mensajeRegistro" class="mensaje"></div>
+        </section>
+    </main>
+
+    <script src="comun.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
